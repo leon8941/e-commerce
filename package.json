@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "sample ecommerce",
+  "main": "index.js",
+  "dependencies": {
+    "admin-bro": "^2.2.5",
+    "admin-bro-expressjs": "^2.0.4",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "mocha": "^7.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC"
+}
