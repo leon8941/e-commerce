@@ -1,23 +1,16 @@
-const AdminBro = require('admin-bro')
-const AdminBroSequelize = require('admin-bro-sequelizejs')
 const AdminBroExpress = require('admin-bro-expressjs')
-const formidableMiddleware = require('express-formidable');
-const db = require('./models/index')
 
+const formidableMiddleware = require('express-formidable')
 const express = require('express')
 const app = express()
 
-app.use(formidableMiddleware());
-AdminBro.registerAdapter(AdminBroSequelize)
+app.use(formidableMiddleware())
 
-const adminBro = new AdminBro({
-  databases: [db],
-  rootPath: '/admin',
-})
+const adminBro = require('./adminBro/index')
+let adminBroObj = adminBro.getAdminBro()
+const router = AdminBroExpress.buildRouter(adminBroObj)
 
-const router = AdminBroExpress.buildRouter(adminBro)
-
-app.use(adminBro.options.rootPath, router)
+app.use(adminBroObj.options.rootPath, router)
 
 const run = async () => {
   app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
