@@ -1,14 +1,17 @@
 const AdminBro = require('admin-bro')
+const AdminBroSequelize = require('admin-bro-sequelizejs')
 const AdminBroExpress = require('admin-bro-expressjs')
 const formidableMiddleware = require('express-formidable');
+const db = require('./models/index')
 
 const express = require('express')
 const app = express()
 
 app.use(formidableMiddleware());
+AdminBro.registerAdapter(AdminBroSequelize)
 
 const adminBro = new AdminBro({
-  databases: [],
+  databases: [db],
   rootPath: '/admin',
 })
 
