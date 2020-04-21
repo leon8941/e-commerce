@@ -7,7 +7,7 @@ const app = express()
 app.use(formidableMiddleware())
 
 const adminBro = require('./adminBro/index')
-let adminBroObj = adminBro.getAdminBro()
+const adminBroObj = adminBro.getAdminBro()
 const router = AdminBroExpress.buildRouter(adminBroObj)
 
 app.use(adminBroObj.options.rootPath, router)
