@@ -8,11 +8,21 @@
     "admin-bro-expressjs": "^2.0.4",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "pg": "^8.0.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "lodash.random": "^3.2.0",
+    "lodash.times": "^4.3.2",
+    "nodemon": "^2.0.3",
+    "sequelize-cli": "^5.5.1"
+  },
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config"
   },
   "author": "",
   "license": "ISC"
