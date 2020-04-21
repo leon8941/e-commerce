@@ -1,5 +1,6 @@
 const AdminBro = require('admin-bro')
 const AdminBroSequelize = require('admin-bro-sequelizejs')
+const bcrypt = require('bcrypt')
 
 const db = require('../models/index')
 
