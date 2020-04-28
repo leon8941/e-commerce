@@ -20,3 +20,5 @@ https://adminbro.com/tutorial-00-installation-instructions.html
 
 Tutorial:
 https://medium.com/valtech-ch/setup-a-rest-api-with-sequelize-and-express-js-fae06d08c0a7
+https://softwareontheroad.com/ideal-nodejs-project-structure
+https://github.com/santiq/bulletproof-nodejs
