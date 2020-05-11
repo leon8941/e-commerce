@@ -22,3 +22,6 @@ Tutorial:
 https://medium.com/valtech-ch/setup-a-rest-api-with-sequelize-and-express-js-fae06d08c0a7
 https://softwareontheroad.com/ideal-nodejs-project-structure
 https://github.com/santiq/bulletproof-nodejs
+
+Linting:
+npx eslint src/
