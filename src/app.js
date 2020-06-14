@@ -2,15 +2,28 @@ const bcrypt = require('bcrypt')
 const AdminBroExpress = require('admin-bro-expressjs')
 const formidableMiddleware = require('express-formidable')
 const express = require('express')
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-const app = express()
-
-app.use(formidableMiddleware())
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
+const ApolloServer = require('apollo-server-express').ApolloServer;
+const gql = require('apollo-server-express').gql;
 
 const db = require('./models/index')
 const adminBro = require('./adminBro/index')
+
+const typeDefs = require('./api/gql/schema')
+const resolvers = require('./api/gql/resolvers')
+
+const apolloServer = new ApolloServer({
+  typeDefs: gql(typeDefs),
+  resolvers,
+  context: { db }
+})
+
+const app = express()
+
+apolloServer.applyMiddleware({ app })
+app.use(formidableMiddleware())
+
 const adminBroObj = adminBro.getAdminBro()
 
 //Admin Bro router

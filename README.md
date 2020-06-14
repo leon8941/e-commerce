@@ -22,6 +22,19 @@ Tutorial:
 https://medium.com/valtech-ch/setup-a-rest-api-with-sequelize-and-express-js-fae06d08c0a7
 https://softwareontheroad.com/ideal-nodejs-project-structure
 https://github.com/santiq/bulletproof-nodejs
+Sequalize sync : https://medium.com/@smallbee/how-to-use-sequelize-sync-without-difficulties-4645a8d96841
+
 
 Linting:
 npx eslint src/
+
+updateAdminUser(
+  id: ID!,
+  email: String,
+  name: String,
+  role: String
+): AdminUser!
+
+deleteAdminUser (
+  id: ID!
+): Int!
