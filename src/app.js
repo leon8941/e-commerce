@@ -4,8 +4,8 @@ const formidableMiddleware = require('express-formidable')
 const express = require('express')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
-const ApolloServer = require('apollo-server-express').ApolloServer;
-const gql = require('apollo-server-express').gql;
+const ApolloServer = require('apollo-server-express').ApolloServer
+const gql = require('apollo-server-express').gql
 
 const db = require('./models/index')
 const adminBro = require('./adminBro/index')
@@ -16,7 +16,8 @@ const resolvers = require('./api/gql/resolvers')
 const apolloServer = new ApolloServer({
   typeDefs: gql(typeDefs),
   resolvers,
-  context: { db }
+  context: { db },
+  debug: false
 })
 
 const app = express()

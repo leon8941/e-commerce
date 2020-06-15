@@ -1,4 +1,6 @@
 const bcrypt = require('bcrypt')
+const { ApolloError, ValidationError } = require('apollo-server-express')
+const { Error } = require('sequelize')
 
 module.exports = {
   Query: {
@@ -8,14 +10,22 @@ module.exports = {
     createAdminUser: async (obj, { email, name, role, password }, { db }) => {
       let encryptedPassword = await bcrypt.hash(password, 10)
 
-      const result = await db.AdminUser.create({
-        email: email,
-        name: name,
-        role: role,
-        encryptedPassword: encryptedPassword
-      })
+      try {
+        const result = await db.AdminUser.create({
+          email: email,
+          name: name,
+          role: role,
+          encryptedPassword: encryptedPassword
+        })
 
-      console.log(result)
+        return result
+      }
+      catch (exception) {
+        throw new ApolloError(
+          exception.errors.reduce((accumulator, currentValue) => { return accumulator + currentValue.message + ", " }, ""),
+          exception.name
+        )
+      }
     }
   }
 }
