@@ -23,6 +23,7 @@ https://medium.com/valtech-ch/setup-a-rest-api-with-sequelize-and-express-js-fae
 https://softwareontheroad.com/ideal-nodejs-project-structure
 https://github.com/santiq/bulletproof-nodejs
 Sequalize sync : https://medium.com/@smallbee/how-to-use-sequelize-sync-without-difficulties-4645a8d96841
+sessions management : https://www.npmjs.com/package/connect-session-sequelize
 
 
 Linting:

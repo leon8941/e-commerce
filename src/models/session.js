@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     expires: DataTypes.STRING,
     data: DataTypes.STRING
   }, {});
-  Session.associate = function(models) {
+  Session.associate = function() {
     // associations can be defined here
   };
   return Session;
