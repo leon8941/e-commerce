@@ -13,6 +13,7 @@ generate model: npx sequelize-cli model:generate --name AdminUser --attributes e
 running migration: npx sequelize-cli db:migrate
 create seed file: npx sequelize-cli seed:generate --name demo-user
 running seeds file: npx sequelize-cli db:seed:all
+running seeds for specific file: npx sequelize-cli db:seed --seed [seed_file_name].js
 
 Admin Portal:
 https://adminbro.com/tutorial-00-installation-instructions.html
