@@ -26,6 +26,9 @@ https://github.com/santiq/bulletproof-nodejs
 Sequalize sync : https://medium.com/@smallbee/how-to-use-sequelize-sync-without-difficulties-4645a8d96841
 sessions management : https://www.npmjs.com/package/connect-session-sequelize
 
+GraphQL scalar type:
+https://stackoverflow.com/questions/41510880/whats-the-difference-between-parsevalue-and-parseliteral-in-graphqlscalartype
+https://github.com/graphql/graphql-js/issues/500
 
 Linting:
 npx eslint src/
