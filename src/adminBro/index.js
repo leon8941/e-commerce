@@ -8,7 +8,7 @@ const getAdminBro = () => {
   AdminBro.registerAdapter(AdminBroSequelize)
 
   let adminUser = {
-    resource: db.AdminUser,
+    resource: db.AdminUsers,
     options: {
       properties: {
         encryptedPassword: {

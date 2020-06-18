@@ -1,6 +1,6 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
-  const AdminUser = sequelize.define('AdminUser', {
+  const AdminUsers = sequelize.define('AdminUsers', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     encryptedPassword: DataTypes.STRING,
     role: DataTypes.STRING
   }, {})
-  AdminUser.associate = function() {
+  AdminUsers.associate = function() {
     // associations can be defined here
   }
-  return AdminUser
+  return AdminUsers
 }

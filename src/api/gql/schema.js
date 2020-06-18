@@ -1,5 +1,5 @@
 module.exports = `
-  type AdminUser {
+  type AdminUsers {
     id: ID!
     email: String!
     name: String!
@@ -7,8 +7,8 @@ module.exports = `
   }
 
   type Query {
-    adminUsers: [AdminUser!]
-    adminUser(id: ID!): AdminUser
+    adminUsers: [AdminUsers!]
+    adminUser(id: ID!): AdminUsers
   }
 
   type Mutation {
@@ -17,6 +17,6 @@ module.exports = `
       name: String!,
       role: String!,
       password: String!
-    ): AdminUser!
+    ): AdminUsers!
   }
 `

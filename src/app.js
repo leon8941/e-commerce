@@ -30,7 +30,7 @@ const adminBroObj = adminBro.getAdminBro()
 //Admin Bro router
 const auth = {
   authenticate: async (email, password) => {
-    const adminUser = await db.AdminUser.findOne({
+    const adminUser = await db.AdminUsers.findOne({
       where: {
         email: email
       }

@@ -4,14 +4,14 @@ const { Error } = require('sequelize')
 
 module.exports = {
   Query: {
-    adminUsers: (obj, args, { db }) => db.AdminUser.findAll()
+    adminUsers: (obj, args, { db }) => db.AdminUsers.findAll()
   },
   Mutation: {
     createAdminUser: async (obj, { email, name, role, password }, { db }) => {
       let encryptedPassword = await bcrypt.hash(password, 10)
 
       try {
-        const result = await db.AdminUser.create({
+        const result = await db.AdminUsers.create({
           email: email,
           name: name,
           role: role,
