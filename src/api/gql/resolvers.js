@@ -99,9 +99,8 @@ module.exports = {
     },
     
     signIn: async (obj, args, { db }) => {
-      let { email, password } = args
-      let encryptedPassword = await bcrypt.hash(password, 10)
-      
+      let { email, password } = args 
+       
       try {
         const user = await db.Users.findOne({
           where: {
