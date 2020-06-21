@@ -29,6 +29,11 @@ module.exports = `
     status: UserStatus!
   }
 
+  type AuthPayload {
+    user: Users
+    token: String
+  }
+
   type Query {
     adminUsers: [AdminUsers!]
     adminUser(id: ID!): AdminUsers
@@ -52,6 +57,6 @@ module.exports = `
       lastName: String!
       gender: UserGender!
       dateOfBirth: Date
-    ): Users!
+    ): AuthPayload!
   }
 `

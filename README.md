@@ -6,7 +6,6 @@ https://sequelize.org/v5/
 
 seq.sequelize.authenticate().then(...)
 
-
 Migrations:
 
 generate model: npx sequelize-cli model:generate --name AdminUser --attributes email:String,name:String,password:String
@@ -20,6 +19,10 @@ https://adminbro.com/tutorial-00-installation-instructions.html
 
 
 Tutorial:
+SQL and NoSQL ideas: 
+https://www.quora.com/Does-it-make-sense-to-combine-both-NoSQL-and-SQL-Why
+https://www.quora.com/I-see-sites-using-multiple-databases-like-NoSQL-and-SQL-together-how-is-this-done
+
 https://medium.com/valtech-ch/setup-a-rest-api-with-sequelize-and-express-js-fae06d08c0a7
 https://softwareontheroad.com/ideal-nodejs-project-structure
 https://github.com/santiq/bulletproof-nodejs
@@ -30,16 +33,16 @@ GraphQL scalar type:
 https://stackoverflow.com/questions/41510880/whats-the-difference-between-parsevalue-and-parseliteral-in-graphqlscalartype
 https://github.com/graphql/graphql-js/issues/500
 
+Apollo Federation, a new way of implementing GraphQL:
+[https://www.apollographql.com/docs/apollo-server/federation/introduction/] Apollo Federation overview, separation of concern. Look at Concern-based separation
+[https://blog.logrocket.com/the-what-when-why-and-how-of-federated-graphql/] Benefits of federation
+
 Linting:
 npx eslint src/
 
-updateAdminUser(
-  id: ID!,
-  email: String,
-  name: String,
-  role: String
-): AdminUser!
+Hosting:
+1. Google App Engine (Standard environment) - https://cloud.google.com/appengine/docs/nodejs
+2. Google Authentication:
+   - https://firebase.google.com/docs/auth/web/custom-auth
+   - https://firebase.google.com/docs/auth/admin/create-custom-tokens
 
-deleteAdminUser (
-  id: ID!
-): Int!

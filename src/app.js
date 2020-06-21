@@ -16,7 +16,9 @@ const resolvers = require('./api/gql/resolvers')
 const apolloServer = new ApolloServer({
   typeDefs: gql(typeDefs),
   resolvers,
-  context: { db },
+  context: ( {req} ) => { 
+    return { db } 
+  },
   debug: false
 })
 

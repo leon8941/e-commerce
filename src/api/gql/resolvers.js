@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const { GraphQLScalarType } = require('graphql')
 const { Kind } = require('graphql/language')
 const { ApolloError } = require('apollo-server-express')
+const firebaseAdmin = require('./../../config/google/config')
 
 module.exports = {
   /* Epoch timestamp format */
@@ -45,7 +46,7 @@ module.exports = {
         return result
       }
       catch (exception) {
-        if (typeof exception.errors === 'undefined') {
+        if (typeof exception.errors === undefined) {
           throw new Error(exception.name)
         }
         else {
@@ -63,7 +64,7 @@ module.exports = {
       let encryptedPassword = await bcrypt.hash(password, 10)
       
       try {
-        const results = await db.Users.create({
+        const result = await db.Users.create({
           email: email,
           encryptedPassword: encryptedPassword,
           firstName: firstName,
@@ -73,10 +74,20 @@ module.exports = {
           status: "active"
         })
 
-        return results
+        if (result) {
+          const customFirebaseToken = await firebaseAdmin.auth().createCustomToken(result.id)
+          return {
+            user: result,
+            token: customFirebaseToken
+          }
+        }
+        else {
+          console.log(result)
+          throw new Error("There are some problems in signing up")
+        }
       }
       catch (exception) {
-        if (typeof exception.errors === 'undefined') {
+        if (typeof exception.errors === undefined) {
           throw new Error(exception.name)
         }
         else {
