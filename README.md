@@ -45,4 +45,5 @@ Hosting:
 2. Google Authentication:
    - https://firebase.google.com/docs/auth/web/custom-auth
    - https://firebase.google.com/docs/auth/admin/create-custom-tokens
+   - https://www.apollographql.com/docs/apollo-server/security/authentication/#authorization-in-data-models
 
