@@ -57,6 +57,11 @@ module.exports = `
       lastName: String!
       gender: UserGender!
       dateOfBirth: Date
-    ): AuthPayload!
+    ): AuthPayload
+
+    signIn(
+      email: String!
+      password: String!
+    ): AuthPayload
   }
 `

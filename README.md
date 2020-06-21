@@ -46,4 +46,5 @@ Hosting:
    - https://firebase.google.com/docs/auth/web/custom-auth
    - https://firebase.google.com/docs/auth/admin/create-custom-tokens
    - https://www.apollographql.com/docs/apollo-server/security/authentication/#authorization-in-data-models
+   - https://reallifeprogramming.com/authentication-and-authorization-in-nodejs-graphql-api-58528f6fce5f
 

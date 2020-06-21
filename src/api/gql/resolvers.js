@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const { GraphQLScalarType } = require('graphql')
 const { Kind } = require('graphql/language')
-const { ApolloError } = require('apollo-server-express')
+const { ApolloError, AuthenticationError } = require('apollo-server-express')
 const firebaseAdmin = require('./../../config/google/config')
 
 module.exports = {
@@ -47,7 +47,7 @@ module.exports = {
       }
       catch (exception) {
         if (typeof exception.errors === undefined) {
-          throw new Error(exception.name)
+          throw new Error(exception)
         }
         else {
           throw new ApolloError(
@@ -74,7 +74,7 @@ module.exports = {
           status: "active"
         })
 
-        if (result) {
+        if (result != null) {
           const customFirebaseToken = await firebaseAdmin.auth().createCustomToken(result.id)
           return {
             user: result,
@@ -82,13 +82,55 @@ module.exports = {
           }
         }
         else {
-          console.log(result)
-          throw new Error("There are some problems in signing up")
+          throw new AuthenticationError("There are some problems in signing up")
         }
       }
       catch (exception) {
-        if (typeof exception.errors === undefined) {
-          throw new Error(exception.name)
+        if (exception.errors == undefined) {
+          throw new Error(exception)
+        }
+        else {
+          throw new ApolloError(
+            exception.errors.reduce((accumulator, currentValue) => { return accumulator + currentValue.message + ", " }, ""),
+            exception.name
+          )
+        }
+      }
+    },
+    
+    signIn: async (obj, args, { db }) => {
+      let { email, password } = args
+      let encryptedPassword = await bcrypt.hash(password, 10)
+      
+      try {
+        const user = await db.Users.findOne({
+          where: {
+            email: email
+          }
+        })
+        
+        if (user) {
+          let result = await bcrypt.compare(password, user.encryptedPassword)
+
+          if(result === true) {
+            const customFirebaseToken = await firebaseAdmin.auth().createCustomToken(user.id)
+            return {
+              user: user,
+              token: customFirebaseToken
+            }
+          }
+          else {
+            throw new AuthenticationError('Invalid email or password!')
+          }
+            
+        }
+        else {
+          throw new AuthenticationError('Invalid email or password!')
+        } 
+      }
+      catch (exception) {
+        if (exception.errors == undefined) {
+          throw new Error(exception)
         }
         else {
           throw new ApolloError(
