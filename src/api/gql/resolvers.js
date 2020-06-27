@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt')
 const { GraphQLScalarType } = require('graphql')
 const { Kind } = require('graphql/language')
 const { ApolloError, AuthenticationError } = require('apollo-server-express')
-const firebaseAdmin = require('./../../config/google/config')
+const { firebaseAdmin } = require('./../../config/google/config')
 
 module.exports = {
   /* Epoch timestamp format */
