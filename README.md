@@ -54,6 +54,6 @@ Hosting:
 - [x] Implement an Rail's Active Admin like admin portal, with AdminBro in Express Js
 - [x] Implement Apollo GraphQL
 - [x] Unit tests with Mocha
-- [ ] Deploy to Google Cloud
+- [ ] Deploy to Google App Engine
 - [ ] Implement Continuous integration
 - [ ] Implement simple "plug and play" concept for anyone to use
