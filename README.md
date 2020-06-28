@@ -48,3 +48,12 @@ Hosting:
    - https://www.apollographql.com/docs/apollo-server/security/authentication/#authorization-in-data-models
    - https://reallifeprogramming.com/authentication-and-authorization-in-nodejs-graphql-api-58528f6fce5f
 
+
+1st Phase To do :
+- [x] Develop a proper ORM with Sequelize
+- [x] Implement an Rail's Active Admin like admin portal, with AdminBro in Express Js
+- [x] Implement Apollo GraphQL
+- [x] Unit tests with Mocha
+- [ ] Deploy to Google Cloud
+- [ ] Implement Continuous integration
+- [ ] Implement simple "plug and play" concept for anyone to use
