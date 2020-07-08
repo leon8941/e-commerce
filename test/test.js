@@ -14,7 +14,7 @@ describe('Client side unit test', () => {
     .send({
       query: `
         mutation {
-          signIn(email: "johnwick@gmail.com", password: "123456") {
+          signIn(email: "johnwatson@gmail.com", password: "123456") {
             user {
               id
             }
@@ -37,6 +37,7 @@ describe('Client side unit test', () => {
       const clientResponse = await firebase.auth().signInWithCustomToken(token)
 
       expect(clientResponse.user.uid).to.eql(user.id)
+
       
       done()
     })

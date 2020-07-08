@@ -117,3 +117,4 @@ dist
 *.zip
 credentials.json
 .secret/
+.SECRET_README.md

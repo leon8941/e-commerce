@@ -1,3 +1,4 @@
+require('dotenv').config()
 const bcrypt = require('bcrypt')
 const AdminBroExpress = require('admin-bro-expressjs')
 const formidableMiddleware = require('express-formidable')
