@@ -37,13 +37,11 @@ const run = async () => {
   const nextApp = next({ dev })
   const handle = nextApp.getRequestHandler()
   // ##### Next Js ##### //
-
-  nextApp.prepare().then(() => {
-    app.get('*', (req, res) => {
-      return handle(req, res)
-    })
-    app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
+  await nextApp.prepare()
+  app.get('*', (req, res) => {
+    return handle(req, res)
   })
+  app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 }
 
 run()

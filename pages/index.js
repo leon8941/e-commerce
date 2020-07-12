@@ -1,5 +1,9 @@
-function HomePage() {
-  return <div>Welcome to Next.js!</div>
+const Header = require('../components/Header').default
+
+const HomePage = () => {
+  return <div>
+    <Header/>
+  </div>
 }
 
 export default HomePage

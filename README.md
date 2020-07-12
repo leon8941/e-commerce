@@ -63,20 +63,29 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 1. Using both SQL and NoSQL ideas: 
    - https://www.quora.com/Does-it-make-sense-to-combine-both-NoSQL-and-SQL-Why
    - https://www.quora.com/I-see-sites-using-multiple-databases-like-NoSQL-and-SQL-together-how-is-this-done
+
 2. Express Js and Sequelize related info:
    - Setup RestAPI with ExpressJs and Sequelize: https://medium.com/valtech-ch/setup-a-rest-api-with-sequelize-and-express-js-fae06d08c0a7
    - Ideal NodeJs project structure: https://softwareontheroad.com/ideal-nodejs-project-structure
    - Sequalize sync: https://medium.com/@smallbee/how-to-use-sequelize-sync-without-difficulties-4645a8d96841
    - Sessions management: https://www.npmjs.com/package/connect-session-sequelize
 
-3. GraphQL related info:
+3. Next Js
+   - https://blog.logrocket.com/how-to-build-a-server-rendered-react-app-with-next-express-d5a389e7ab2f/
+   - Apollo client as front end:
+     - https://hasura.io/learn/graphql/nextjs-fullstack-serverless/apollo-client/
+     - https://dev.to/angad777/setting-up-apollo-graphql-in-next-js-with-server-side-rendering-45l5
+  
+4. GraphQL related info:
    - GraphQL scalar type: https://stackoverflow.com/questions/41510880/whats-the-difference-between-parsevalue-and-parseliteral-in-graphqlscalartype
    - Scalar's serialize, parseValue and parseLiteral differences: https://github.com/graphql/graphql-js/issues/500
    - Apollo Federation, a new way of implementing GraphQL:
       - Apollo Federation overview, separation of concern. Look at [Concern-based separation](https://www.apollographql.com/docs/apollo-server/federation/introduction/).
       - [Benefits of federatio](https://blog.logrocket.com/the-what-when-why-and-how-of-federated-graphql/).
+   - Apollo Clients
+     - Advance usage - https://www.apollographql.com/docs/link/
 
-4. Hosting:
+5. Hosting:
    - Google App Engine (Standard environment) - https://cloud.google.com/appengine/docs/nodejs
    - Connect CloudSQL to Google App Engine:
      - https://cloud.google.com/sql/docs/postgres/connect-app-engine-standard#node.js
