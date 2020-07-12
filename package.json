@@ -17,8 +17,11 @@
     "express-session": "^1.17.1",
     "firebase": "^7.15.5",
     "firebase-admin": "^8.12.1",
+    "next": "^9.4.4",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sequelize": "^5.21.6",
     "uuid": "^8.1.0"
   },
@@ -35,7 +38,7 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "node .",
+    "start": "node backend/app.js",
     "inspect": "nodemon --inspect backend/app.js",
     "test": "mocha",
     "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
