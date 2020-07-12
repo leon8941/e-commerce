@@ -1,34 +1,19 @@
 require('dotenv').config()
-const bcrypt = require('bcrypt')
 const AdminBroExpress = require('admin-bro-expressjs')
 const formidableMiddleware = require('express-formidable')
 const express = require('express')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
-const ApolloServer = require('apollo-server-express').ApolloServer
-const gql = require('apollo-server-express').gql
-
 const db = require('./models/index')
-const { adminBro, auth }= require('./adminBro/index')
-
-const typeDefs = require('./api/gql/schema')
-const resolvers = require('./api/gql/resolvers')
-
-const apolloServer = new ApolloServer({
-  typeDefs: gql(typeDefs),
-  resolvers,
-  context: ( {req} ) => { 
-    return { db } 
-  },
-  debug: false
-})
+const { adminBro, auth } = require('./adminBro/index')
+const apolloServer = require('./api/gql/index')
 
 const app = express()
 
 apolloServer.applyMiddleware({ app })
 app.use(formidableMiddleware())
 
-const adminBroObj = adminBro.getAdminBro()
+const adminBroObj = adminBro()
 
 const router = AdminBroExpress.buildAuthenticatedRouter(
   adminBroObj, 
