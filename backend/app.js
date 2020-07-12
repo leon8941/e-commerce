@@ -9,7 +9,7 @@ const ApolloServer = require('apollo-server-express').ApolloServer
 const gql = require('apollo-server-express').gql
 
 const db = require('./models/index')
-const adminBro = require('./adminBro/index')
+const { adminBro, auth }= require('./adminBro/index')
 
 const typeDefs = require('./api/gql/schema')
 const resolvers = require('./api/gql/resolvers')
@@ -29,27 +29,6 @@ apolloServer.applyMiddleware({ app })
 app.use(formidableMiddleware())
 
 const adminBroObj = adminBro.getAdminBro()
-
-//Admin Bro router
-const auth = {
-  authenticate: async (email, password) => {
-    const adminUser = await db.AdminUsers.findOne({
-      where: {
-        email: email
-      }
-    })
-
-    if (adminUser) {
-      const matched = await bcrypt.compare(password, adminUser.encryptedPassword)
-      if (matched) {
-        return adminUser
-      }
-    }
-    return false
-  },
-  cookiePassword: 'some-secret-password-used-to-secure-cookie',
-  cookieName: 'some-secret-name'
-}
 
 const router = AdminBroExpress.buildAuthenticatedRouter(
   adminBroObj, 

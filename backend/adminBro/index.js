@@ -89,4 +89,28 @@ const getAdminBro = () => {
   return adminBro 
 }
 
-module.exports.getAdminBro = getAdminBro
+const auth = () => {
+  return {
+    authenticate: async (email, password) => {
+      const adminUser = await db.AdminUsers.findOne({
+        where: {
+          email: email
+        }
+      })
+
+      if (adminUser) {
+        const matched = await bcrypt.compare(password, adminUser.encryptedPassword)
+        if (matched) {
+          return adminUser
+        }
+      }
+      return false
+    },
+    cookiePassword: 'some-secret-password-used-to-secure-cookie',
+    cookieName: 'some-secret-name'
+  }
+}
+
+module.exports.getAdminBro = { 
+  getAdminBro, auth
+}
