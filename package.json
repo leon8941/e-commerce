@@ -2,7 +2,7 @@
   "name": "ecommerce",
   "version": "1.0.0",
   "description": "sample ecommerce",
-  "main": "src/app.js",
+  "main": "backend/app.js",
   "dependencies": {
     "admin-bro": "^2.2.5",
     "admin-bro-expressjs": "^2.0.4",
@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "node .",
-    "inspect": "nodemon --inspect src/app.js",
+    "inspect": "nodemon --inspect backend/app.js",
     "test": "mocha",
     "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
     "deploy": "gcloud app deploy"

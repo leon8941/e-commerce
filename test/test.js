@@ -33,7 +33,7 @@ describe('Client side unit test', () => {
 
       const user = responseBody.user
       const token = responseBody.token
-      const { firebase } = require('../src/config/google/config')
+      const { firebase } = require('../backend/config/google/config')
       const clientResponse = await firebase.auth().signInWithCustomToken(token)
 
       expect(clientResponse.user.uid).to.eql(user.id)

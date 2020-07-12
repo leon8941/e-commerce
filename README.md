@@ -22,7 +22,7 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 - [x] Implement Apollo GraphQL
 - [x] Unit tests with Mocha
 - [x] Make use of Fireadmin SDK for creating custom token for authentication, then front-end will leverage this token to gain access to Firebase SDK resources.
-- [ ] Deploy to Google App Engine
+- [ ] Deploy to Heroku with Docker
 - [ ] Implement CI / CD
 - [ ] Implement simple "plug and play" concept for anyone to use
 
