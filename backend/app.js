@@ -67,7 +67,19 @@ const router = AdminBroExpress.buildAuthenticatedRouter(
 app.use(adminBroObj.options.rootPath, router)
 
 const run = async () => {
-  app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
+  // ##### Next Js ##### //
+  const next = require('next')
+  const dev = process.env.NODE_ENV !== 'production'
+  const nextApp = next({ dev })
+  const handle = nextApp.getRequestHandler()
+  // ##### Next Js ##### //
+
+  nextApp.prepare().then(() => {
+    app.get('*', (req, res) => {
+      return handle(req, res)
+    })
+    app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
+  })
 }
 
 run()
