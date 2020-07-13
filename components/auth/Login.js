@@ -1,10 +1,10 @@
-const react = require('react')
-const { Router } = require('next/router')
-const { Button, Form } = require('react-bootstrap')
+import React, { useState } from 'react'
+import { Router } from 'next/router'
+import { Button, Form } from 'react-bootstrap'
 
 const Login = () => {
-  const [email, setEmail] = react.useState(null)
-  const [password, setPassword] = react.useState(null)
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
 
   const handleOnSubmit = e => {
     e.preventDefault()

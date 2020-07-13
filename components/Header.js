@@ -1,6 +1,7 @@
-const { withRouter } = require('next/router')
-const { Navbar } = require('react-bootstrap')
-const Login = require('./auth/Login').default
+import React from 'react'
+import { withRouter } from 'next/router'
+import { Navbar } from 'react-bootstrap'
+import Login from './auth/Login'
 
 const Header = ({ router: { pathname } }) => 
   <Navbar className='justify-content-between navBar'>

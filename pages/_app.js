@@ -1,3 +1,5 @@
+import React from 'react'
+
 require('bootstrap/dist/css/bootstrap.min.css')
 require('../styles/App.css')
 
