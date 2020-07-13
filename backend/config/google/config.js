@@ -2,10 +2,10 @@
 
 const fireBaseAdminFileName = 'e-commerce-firebase-adminsdk.json'
 const serviceAccount = require(`../../../.secret/${fireBaseAdminFileName}`)
-const firebaseAdmin = require('firebase-admin')
-const firebase = require('firebase')
-const databaseURL = require('../../../.secret/firebase_database.json')
-const firebaseSDKConfig = require('../../../.secret/firebase_sdk_config.json')
+import firebaseAdmin from 'firebase-admin'
+import firebase from 'firebase'
+import databaseURL from '../../../.secret/firebase_database.json'
+import firebaseSDKConfig from '../../../.secret/firebase_sdk_config.json'
 
 firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(serviceAccount),
@@ -14,7 +14,7 @@ firebaseAdmin.initializeApp({
 
 firebase.initializeApp(firebaseSDKConfig)
 
-module.exports = { 
-  firebaseAdmin: firebaseAdmin,
-  firebase: firebase
+export { 
+  firebaseAdmin,
+  firebase
 }

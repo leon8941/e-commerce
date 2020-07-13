@@ -1,4 +1,5 @@
 'use strict'
+
 const adminUsers = (sequelize, DataTypes) => {
   const AdminUsers = sequelize.define('AdminUsers', {
     id: {
