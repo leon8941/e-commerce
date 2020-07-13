@@ -1,10 +1,10 @@
-const bcrypt = require('bcrypt')
-const { GraphQLScalarType } = require('graphql')
-const { Kind } = require('graphql/language')
-const { ApolloError, AuthenticationError } = require('apollo-server-express')
-const { firebaseAdmin } = require('./../../config/google/config')
+import bcrypt from 'bcrypt'
+import { GraphQLScalarType } from 'graphql'
+import { Kind } from 'graphql/language'
+import { ApolloError, AuthenticationError } from 'apollo-server-express'
+import { firebaseAdmin } from './../../config/google/config'
 
-module.exports = {
+const resolvers = {
   /* Epoch timestamp format */
   Date: new GraphQLScalarType({
     name: 'Date',
@@ -141,3 +141,5 @@ module.exports = {
     }
   }
 }
+
+export default resolvers

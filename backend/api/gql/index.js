@@ -1,9 +1,9 @@
+import { ApolloServer } from 'apollo-server-express'
 
-const ApolloServer = require('apollo-server-express').ApolloServer
-const gql = require('apollo-server-express').gql
-const typeDefs = require('./schema')
-const resolvers = require('./resolvers')
-const db = require('../../models/index')
+import { gql } from 'apollo-server-express'
+import typeDefs from './schema'
+import resolvers from './resolvers'
+import db from '../../models/index'
 
 const apolloServer = new ApolloServer({
   typeDefs: gql(typeDefs),
@@ -14,4 +14,4 @@ const apolloServer = new ApolloServer({
   debug: false
 })
 
-module.exports = apolloServer
+export default apolloServer

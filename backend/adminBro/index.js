@@ -1,8 +1,8 @@
-const AdminBro = require('admin-bro')
-const AdminBroSequelize = require('admin-bro-sequelizejs')
-const bcrypt = require('bcrypt')
+import AdminBro from 'admin-bro'
+import AdminBroSequelize from 'admin-bro-sequelizejs'
+import bcrypt from 'bcrypt'
 
-const db = require('../models/index')
+import db from '../models/index'
 
 const getAdminBro = () => {
   AdminBro.registerAdapter(AdminBroSequelize)

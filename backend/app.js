@@ -1,12 +1,18 @@
-require('dotenv').config()
-const AdminBroExpress = require('admin-bro-expressjs')
-const formidableMiddleware = require('express-formidable')
-const express = require('express')
-const session = require('express-session')
-const SequelizeStore = require('connect-session-sequelize')(session.Store)
-const db = require('./models/index')
-const { adminBro, auth } = require('./adminBro/index')
-const apolloServer = require('./api/gql/index')
+import dotenv from 'dotenv'
+dotenv.config()
+
+import AdminBroExpress from 'admin-bro-expressjs'
+import formidableMiddleware from 'express-formidable'
+import express from 'express'
+import session from 'express-session'
+import SequelizeStore from 'connect-session-sequelize'
+const Store = SequelizeStore(session.Store)
+
+import next from 'next'
+
+import db from './models/index'
+import { adminBro, auth } from './adminBro/index'
+import apolloServer from './api/gql/index'
 
 const app = express()
 
@@ -22,7 +28,7 @@ const router = AdminBroExpress.buildAuthenticatedRouter(
   {
     resave: false,
     saveUninitialized: true,
-    store: new SequelizeStore({
+    store: new Store({
       db: db.sequelize
     })
   }
@@ -32,7 +38,6 @@ app.use(adminBroObj.options.rootPath, router)
 
 const run = async () => {
   // ##### Next Js ##### //
-  const next = require('next')
   const dev = process.env.NODE_ENV !== 'production'
   const nextApp = next({ dev })
   const handle = nextApp.getRequestHandler()

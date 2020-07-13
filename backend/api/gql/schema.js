@@ -1,4 +1,4 @@
-module.exports = `
+const schema = `
   scalar Date
 
   type AdminUsers {
@@ -65,3 +65,5 @@ module.exports = `
     ): AuthPayload
   }
 `
+
+export default schema
