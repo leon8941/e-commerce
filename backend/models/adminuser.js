@@ -1,5 +1,5 @@
 'use strict'
-module.exports = (sequelize, DataTypes) => {
+const adminUsers = (sequelize, DataTypes) => {
   const AdminUsers = sequelize.define('AdminUsers', {
     id: {
       type: DataTypes.INTEGER,
@@ -20,3 +20,5 @@ module.exports = (sequelize, DataTypes) => {
   }
   return AdminUsers
 }
+
+export default adminUsers

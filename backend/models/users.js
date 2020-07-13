@@ -1,5 +1,6 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+'use strict'
+
+const users = (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
     id: {
       type: DataTypes.UUID,
@@ -23,9 +24,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM,
       values: ['active', 'inactive']
     }
-  }, {});
+  }, {})
   Users.associate = function(models) {
     // associations can be defined here
-  };
-  return Users;
-};
+  }
+  return Users
+}
+
+export default users
