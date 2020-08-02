@@ -85,15 +85,11 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
    - Apollo Clients
      - Advance usage - https://www.apollographql.com/docs/link/
 
-5. Hosting:
-   - Google App Engine (Standard environment) - https://cloud.google.com/appengine/docs/nodejs
-   - Connect CloudSQL to Google App Engine:
-     - https://cloud.google.com/sql/docs/postgres/connect-app-engine-standard#node.js
-     - https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/cloud-sql/postgres/knex/README.md
-     - https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test
-     - https://stackabuse.com/deploy-node-js-apps-on-google-app-engine/
-     - https://medium.com/@gunar/how-to-use-environment-variables-in-gcloud-app-engine-node-js-86623b3ab0f6
-     - https://medium.com/@mrdatainsight/performing-database-migrations-with-django-on-google-app-engine-and-cloud-sql-c7fd298581b4
+5. Deployment and Hosting:
+   - Heroku with Docker
+     - Use container registry an runtime
+       - https://www.sentinelstand.com/article/docker-with-node-in-development-and-production
+       - 
    - Google Authentication:
      - https://firebase.google.com/docs/auth/web/custom-auth
      - https://firebase.google.com/docs/auth/admin/create-custom-tokens

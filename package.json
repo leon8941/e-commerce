@@ -34,6 +34,7 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.4",
     "@babel/node": "^7.10.4",
     "@babel/plugin-transform-spread": "^7.10.4",
@@ -53,7 +54,10 @@
   },
   "scripts": {
     "babel-node": "babel-node --presets babel-preset-env",
-    "start": "nodemon --exec babel-node -- backend/app.js ",
+    "build": "npm run clean && babel ./backend --out-dir dist",
+    "start": "node ./dist/app.js",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "dev": "nodemon --exec babel-node -- backend/app.js ",
     "inspect": "nodemon --inspect backend/app.js",
     "test": "mocha --exec babel-node",
     "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config"
