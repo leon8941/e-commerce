@@ -56,8 +56,7 @@
     "start": "nodemon --exec babel-node -- backend/app.js ",
     "inspect": "nodemon --inspect backend/app.js",
     "test": "mocha --exec babel-node",
-    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
-    "deploy": "gcloud app deploy"
+    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config"
   },
   "author": "",
   "license": "ISC"
