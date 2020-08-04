@@ -58,6 +58,9 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 ### Admin Portal:
 1. An automatic admin interface which can be plugged into a Nodejs application. [Admin bro](https://adminbro.com/tutorial-00-installation-instructions.html).
 
+### Deployment with Docker:
+1. `docker build -t teckonn/ecommerce .`
+2. `docker run -p 8080:3000 --env PORT=3000 --rm teckonn/ecommerce`
 
 ### Useful Links:
 1. Using both SQL and NoSQL ideas: 
@@ -89,7 +92,11 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
    - Heroku with Docker
      - Use container registry an runtime
        - https://www.sentinelstand.com/article/docker-with-node-in-development-and-production
-       - 
+     - Docker beginner tutorial
+       - https://docker-curriculum.com/
+     - Manage secrets with Docker
+       - https://docs.docker.com/engine/swarm/secrets/#read-more-about-docker-secret-commands
+       - https://morioh.com/p/887a4e02f9b0
    - Google Authentication:
      - https://firebase.google.com/docs/auth/web/custom-auth
      - https://firebase.google.com/docs/auth/admin/create-custom-tokens

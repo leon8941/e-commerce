@@ -1,6 +1,4 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
+import './config/config'
 import AdminBroExpress from 'admin-bro-expressjs'
 import formidableMiddleware from 'express-formidable'
 import express from 'express'

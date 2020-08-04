@@ -1,5 +1,6 @@
 const chai = require('chai')
 const chaiGraphQL = require('chai-graphql')
+import createApolloClient from '../lib/apolloClient'
 
 chai.use(chaiGraphQL)
 
@@ -7,6 +8,15 @@ const expect = chai.expect
 
 const url = `http://localhost:8080`
 const request = require('supertest')(url)
+
+describe('Client side Apollo test', () => {
+  it('initialize Apollo clients', (done) => {
+
+    expect(1).to.be.ok
+
+    done()
+  })
+})
 
 describe('Client side unit test', () => {
   it('perform sign in operation and should return a token, then uid should match', (done) => {
