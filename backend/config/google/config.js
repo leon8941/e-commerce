@@ -1,7 +1,5 @@
 'use strict'
 
-// const fireBaseAdminFileName = 'e-commerce-firebase-adminsdk.json'
-// const serviceAccount = require(`../../../.secret/${fireBaseAdminFileName}`)
 import firebaseAdmin from 'firebase-admin'
 import firebase from 'firebase'
 
@@ -28,8 +26,6 @@ const firebaseSDKConfig = {
   "appId": process.env.APPID,
   "measurementId": process.env.MEASUREMENTID
 }
-
-console.log("serviceAccount", serviceAccount)
 
 firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(serviceAccount),
