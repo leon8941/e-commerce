@@ -60,7 +60,7 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 
 ### Deployment with Docker:
 1. `docker build -t teckonn/ecommerce .`
-2. `docker run -p 8080:3000 --env PORT=3000 --rm teckonn/ecommerce`
+2. `docker run -p 8080:3000 --env PORT=3000 --env-file .env --rm teckonn/ecommerce`
 
 ### Useful Links:
 1. Using both SQL and NoSQL ideas: 
