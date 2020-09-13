@@ -97,6 +97,8 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
      - Manage secrets with Docker
        - https://docs.docker.com/engine/swarm/secrets/#read-more-about-docker-secret-commands
        - https://morioh.com/p/887a4e02f9b0
+   - Docker
+     - https://www.codemochi.com/blog/2019-07-08-prisma-2-nextjs-docker
    - Google Authentication:
      - https://firebase.google.com/docs/auth/web/custom-auth
      - https://firebase.google.com/docs/auth/admin/create-custom-tokens
