@@ -1,4 +1,4 @@
-FROM node:13.12.0-alpine AS base
+FROM node:13.12.0-alpine
 
 RUN mkdir /app
 WORKDIR /app
