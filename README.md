@@ -60,7 +60,9 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 
 ### Deployment with Docker:
 1. `docker build -t teckonn/ecommerce .`
-2. `docker run -p 8080:3000 --env PORT=3000 --env-file .env --rm teckonn/ecommerce`
+2. `docker run -p 3000:8080 --env PORT=3000 --env-file .env --rm teckonn/ecommerce`
+3. `docker exec -it <container_id> /bin/sh`
+
 
 ### Useful Links:
 1. Using both SQL and NoSQL ideas: 
@@ -99,6 +101,7 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
        - https://morioh.com/p/887a4e02f9b0
    - Docker
      - https://www.codemochi.com/blog/2019-07-08-prisma-2-nextjs-docker
+     - Best practive - https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#environment-variables
    - Google Authentication:
      - https://firebase.google.com/docs/auth/web/custom-auth
      - https://firebase.google.com/docs/auth/admin/create-custom-tokens
