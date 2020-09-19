@@ -57,12 +57,14 @@
   "scripts": {
     "babel-node": "babel-node --presets babel-preset-env",
     "build": "npm run clean && babel . --out-dir dist --ignore \".*\",\"node_modules/*\",\"test/*\" && next build ",
-    "start": "node ./dist/backend/app.js",
+    "start": "npm run build && node ./dist/backend/app.js",
     "clean": "rm -rf ./dist && mkdir dist",
     "dev": "nodemon --exec babel-node -- backend/app.js ",
     "inspect": "nodemon --inspect backend/app.js",
     "test": "mocha --require @babel/register",
-    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config"
+    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
+    "db-migrate": "npx sequelize-cli db:migrate",
+    "db-seed": "npx sequelize-cli db:seed:all"
   },
   "author": "",
   "license": "ISC"

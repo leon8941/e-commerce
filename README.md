@@ -58,14 +58,20 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 ### Admin Portal:
 1. An automatic admin interface which can be plugged into a Nodejs application. [Admin bro](https://adminbro.com/tutorial-00-installation-instructions.html).
 
-### Deployment with Docker:
-1. `docker build -t teckonn/ecommerce .`
-2. `docker run -p 3000:8080 --env PORT=3000 --env-file .env --rm teckonn/ecommerce`
-3. `docker exec -it <container_id> /bin/sh`
-4. `docker-compose run --rm ecommerce npm install`
-5. `npm run build` on your local first
-6. `docker-compose up` 
+### Development with Docker Compose:
+1. Installing dependencies: `scripts/install_lib.sh`
+2. Run database migration: `scripts/db_migration.sh`
+3. Start the server in detached mode `scripts/start_server.sh` or `docker-compose up`
+4. Run `docker-compose stop` to stop running containers, and `docker-compose start` to start back teh containers.
+5. Run `docker-compose down` to remove containers.
 
+#### Docker useful commands:
+   - `docker ps`
+   - `docker exec -it <container_id> /bin/sh` -- remote ssh inside container
+   - `docker volume ls`
+   - `docker-compose down`
+   - `docker-compose ls`
+   - `docker volume rm [VOLUME NAME]` -- remove volumes created by docker compose
 
 ### Useful Links:
 1. Using both SQL and NoSQL ideas: 
