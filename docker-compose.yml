@@ -1,20 +1,37 @@
 version: '3.8'
 services:
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: ecommerce
+    ports:
+      - '5432:5432'
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+
   ecommerce:
     image: node:13.12.0-alpine
+    depends_on:
+      - db
     volumes:
       - type: bind
         source: ./
         target: /app
       - type: volume
-        source: nodemodules 
+        source: nodemodules
         target: /app/node_modules
         volume:
           nocopy: true
     working_dir: /app
-    command: node dist/backend/app.js
+    command: npm run start
     ports: 
       - '3000:8080'
-    env_file: .env
+    environment:
+      - PORT=3000
+    env_file:
+      - .env
 volumes:
   nodemodules:
+  database-data:

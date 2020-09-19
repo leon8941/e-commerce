@@ -11,4 +11,6 @@ COPY . .
 RUN npm run build
 RUN npm prune --production
 
+COPY test.env .env
+
 CMD ["node", "./dist/backend/app.js"]

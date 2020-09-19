@@ -62,7 +62,9 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 1. `docker build -t teckonn/ecommerce .`
 2. `docker run -p 3000:8080 --env PORT=3000 --env-file .env --rm teckonn/ecommerce`
 3. `docker exec -it <container_id> /bin/sh`
-4. `docker-compose up` - to run Docker with Docker Compose
+4. `docker-compose run --rm ecommerce npm install`
+5. `npm run build` on your local first
+6. `docker-compose up` 
 
 
 ### Useful Links:
