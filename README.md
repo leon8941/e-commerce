@@ -35,10 +35,25 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 
 
 ## Development:
+### Setup local development with Docker Compose:
+
+Make sure Docker is installed first proceed the following instructions.
+
+1. Installing dependencies: `scripts/install_lib.sh`
+2. Run database migration: `scripts/db_migration.sh`
+3. Start the server in detached mode `scripts/start_server.sh` or `docker-compose up`, and wait a couple of seconds for it to process.
+4. Go to `localhost:3000` for the client side, and `localhost:3000/admin`
+for the admin portal.
+
+### After sucessfully setup development environment, you can ...
+1. Run `docker-compose stop` to stop running containers, and `docker-compose start` to start back teh containers.
+2. Run `docker-compose down` to remove containers.
+3. Run `docker volume rm [VOLUME NAME]` to remove volumes created by Docker.
+
 ### Migrations with Sequelize:
 
 1. Generate model:
-   
+
    `npx sequelize-cli model:generate --name AdminUser --attributes email:String,name:String password:String`
 2. Running migration:
    
@@ -58,14 +73,8 @@ If you notice there are 2 databases mentioned above: **Postgres** and **Cloud Fi
 ### Admin Portal:
 1. An automatic admin interface which can be plugged into a Nodejs application. [Admin bro](https://adminbro.com/tutorial-00-installation-instructions.html).
 
-### Development with Docker Compose:
-1. Installing dependencies: `scripts/install_lib.sh`
-2. Run database migration: `scripts/db_migration.sh`
-3. Start the server in detached mode `scripts/start_server.sh` or `docker-compose up`
-4. Run `docker-compose stop` to stop running containers, and `docker-compose start` to start back teh containers.
-5. Run `docker-compose down` to remove containers.
-
-#### Docker useful commands:
+## References:
+### Docker commands:
    - `docker ps`
    - `docker exec -it <container_id> /bin/sh` -- remote ssh inside container
    - `docker volume ls`
